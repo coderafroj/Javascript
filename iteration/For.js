@@ -33,4 +33,18 @@ for(let i=0;i<myArray.length;i++){
 
 //break and continue
 
+for(let i=0;i<=10;i++){
+  if(i==5){
+    console.log("5 a gaya babu")
+    break
+  }
+  console.log(i)
+}
 
+for(let i=0;i<=10;i++){
+  if(i==5){
+    console.log("tata 5")
+    continue
+  }
+  console.log(i)
+}
