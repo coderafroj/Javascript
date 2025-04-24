@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>coderafroj|dom</title>
+</head>
+<body>
+  <ul class="language">
+    <li>javascript</li>
+  </ul>
+</body>
+<script>
+  function addLang(langName){
+    const li=document.createElement('li')
+    li.innerHTML=`${langName}`
+    document.querySelector(".language").appendChild(li)
+  }
+  addLang("python")
+  addLang("java")
+  
+  function addOptLang(langName){
+    const li=document.createElement("li")
+   li.appendChild(document.createTextNode(langName))
+    document.querySelector(".language").appendChild(li)
+  }
+  addOptLang("ruby")
+  
+  
+  //Edit 
+  const secondLang=document.querySelector("li:nth-child(2)")
+ // console.log(secondLang)
+// secondLang.innerHTML="kotlin"
+const newLi=document.createElement("li")
+newLi.textContent="kotlin"
+secondLang.replaceWith(newLi)
+
+//Edit 2nd mathod
+const firstLang=document.querySelector("li:nth-child(1)")
+
+firstLang.outerHTML="<li>Assembly</li>"
+
+//remove
+const lastLang=document.querySelector("li:last-child")
+lastLang.remove()
+
+  
+</script>
+</html>

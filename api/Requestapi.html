@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>request api</title>
+  <style>
+    body{
+      background-color: #212121;
+      color: white;
+    }
+    .profile{
+      height: 400px;
+      background-color: black;
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+      padding: 20px;
+      flex-direction: column;
+      box-shadow: 4px 4px 8px white;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .img{
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+      border-radius: 50%;
+      
+      
+    }
+    .img img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid white;
+      
+    }
+    .name{
+      margin-top: 10px;
+      font-size: 1.6rem;
+    }
+    a{
+      text-decoration: none;
+      color: dodgerblue;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div class="profile">
+      <h3>click profile image for more information</h3>
+    <div class="img"><img src="afu.jpg" alt="" id="i"></div>
+    <div class="name"></div>
+    <div class="id"></div>
+    <div class="blog"><a href=""></a></div>
+    <div class="loca"></div>
+  </div>
+  
+</body>
+<script>
+  const requestUrl="https://api.github.com/users/coderafroj"
+  const xhr=new XMLHttpRequest();
+  xhr.open("Get",requestUrl)
+//  console.log("here")
+xhr.onreadystatechange=function(){
+//  console.log(xhr.readyState)
+  if(xhr.readyState===4){
+    
+   const data=JSON.parse(this.responseText)
+   //console.log(typeof data)
+  // console.log(data.id)
+   console.log(data)
+   console.log(data.location)
+    const seeProfileData=function(){
+    document.querySelector(".name").innerHTML=data.login
+    document.querySelector(".id").innerHTML=`id:${data.id}`
+     document.querySelector(".loca").innerHTML=`location: ${data.location}`
+   
+    const link=document.querySelector("a")
+    link.innerHTML="click to blog"
+    const href=link.document.querySelector("href")
+    href.innerHTML=`blog:${data.blog}`;
+   
+  }
+  document.querySelector("#i").addEventListener("click",seeProfileData)
+   
+   
+  }
+}
+  
+  xhr.send()
+ 
+  
+</script>
+</html>

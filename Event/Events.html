@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Event</title>
+  <style>
+    body{
+      background-color: #212121;
+    }
+    ul{
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    li{
+      border:2px solid white;
+    }
+  </style>
+</head>
+<body>
+  <ul id="images">
+    <li>
+      <img src="a.jpg" alt="" width="50"  id="a">
+    </li>
+    <li>
+      <img src="b.jpg" alt="" width="50"  id="b">
+    </li>
+    <li>
+      <img src="c.jpg" alt="" width="50"  id="c">
+    </li>
+    <li> 
+    <img src="d.jpg" alt="" width="50"  id="d"></li>
+    <li>
+      <img src="e.jpg" alt="" width="50" id="e">
+    </li>
+    <li><img src="afu.jpg" alt="" width="50" id="afu"></li>
+    <li><a href="https://google.com" id="google">click gogle</a></li>
+  </ul>
+</body>
+<script>
+  
+ // document.getElementById("a").onclick=function (){
+  //  alert("hello babu")
+ // }
+ // document.getElementById("a").addEventListener("click",function (){
+   // alert("this is nature img")
+//  })
+  //bubling inside--outside
+// document.getElementById("b").addEventListener("click",function (e){
+ //  console.log("clock click")
+  
+ //  e.stopPropagation()//bubling rokne ki liye
+ //},false)
+// document.getElementById("images").addEventListener//("click",function (e){
+ //  console.log("inside ul click")
+// },false)
+  
+  //capeturing top-bottom
+// document.getElementById("images").addEventListener//("click",function (){
+  // console.log("click inside the ul")
+ //},true)
+// document.getElementById("afu").addEventListener//("click",function (){
+  // console.log("click afu img")
+// },true)
+ 
+ 
+// document.getElementById("google").addEventListener//("click",function (e){
+//   e.preventDefault()
+//   e.stopPropagation()
+ //  console.log("click google")
+// })
+ 
+  
+  //goal jab kisi img per click kare to img remove ho jae
+  document.querySelector("#images").addEventListener("click",function (e){
+    console.log(e.target.parentNode)
+    let removeit=e.target.parentNode
+    //removeit.remove()
+   // removeit.parentNode.removeChild(removeit)
+  })
+  //uper wale mein jab li per click kar rahe hai to sab remove ho raha hai
+  document.querySelector("#images").addEventListener("click",function (e){
+    console.log(e.target.tagName)
+    if(e.target.tagName==="IMG"){
+      let removeIt=e.target.parentNode
+      removeIt.remove()
+    }
+  })
+  
+</script>
+</html>

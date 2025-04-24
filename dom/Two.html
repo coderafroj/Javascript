@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  //create element
+const div=document.createElement("div")
+console.log(div)
+div.className="main"
+div.id="logo"
+div.setAttribute("title","afu")
+div.style.color="red"
+//div.innerHtml="coderafroj"
+const addtext=document.createTextNode("coderafroj")
+div.appendChild(addtext)
+document.body.appendChild(div)
+</script>
+</html>
