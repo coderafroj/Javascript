@@ -95,6 +95,7 @@ const courses=[{
 }]
 const pricePay=courses.reduce((acc,item)=>acc+item.price,0)
 console.log(pricePay)
+console.log(acc)
 
 
 

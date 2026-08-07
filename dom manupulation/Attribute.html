@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute</title>
+</head>
+<body>
+    <a href="">go to my portfolio</a>
+</body>
+<script>
+    let link =document.querySelector("a");
+    //mathod 1
+    link.href="https:coderafroj.me"
+    //mathod 2
+    link.setAttribute("href","http:coderafroj.me")
+    //get value for attribute
+    let v=link.getAttribute("href")
+    console.log(v);
+    //remov attribute
+    link.removeAttribute('href')
+    
+
+
+</script>
+</html>
