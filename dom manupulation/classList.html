@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .logo{
+            font-size: 40px;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="here">
+        <h2>welcome to js</h2>
+        
+    </div>
+</body>
+<script>
+    //create element
+    let h1=document.createElement("h1")
+    h1.innerText="Hey!! Codarafroj"
+    //add karna dom mein
+    document.querySelector("div").prepend(h1)
+    h1.style.textAlign="center"
+    //css ko js se kaise add kre
+    h1.classList.add("logo")
+    //class remove kasie kre
+    document.querySelector("div").classList.remove("here")
+    //toggal se agar class hia to hat jaegi nhi hai to add ho jayegi dark mode light mode karne ke kaam ate hai
+    h1.classList.toggle("logo")
+    h1.classList.toggle("logo")
+
+
+    
+</script>
+</html>

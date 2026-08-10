@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .logo{
+            font-size: 40px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:burlywood;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>hey!! coderafroj</h1>
+    </div>
+</body>
+<script>
+    //create element and add in dom
+    let h2=document.createElement("h2")
+    h2.innerText="welcome to javascfipt"
+    document.querySelector("div").appendChild(h2)
+    //add style
+    let h1=document.querySelector('h1')
+    h1.style.textAlign="center"
+    //css jo js se kasie add kre mine logo naam se css class likhi hai jismeko mein h1 mien add krunga classlist ka use krke
+    h1.classList.add("logo")
+    //js se class kaie hateye div mien hereo naam ki class hai use hatan ahi to class list ka use krke remove mathod se hta denge
+    document.querySelector("div").classList.remove("hero")
+</script>
+</html>

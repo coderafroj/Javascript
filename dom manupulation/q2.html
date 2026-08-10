@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>li</title>
+    <style>
+        .light{
+            color:burlywood;
+        }
+    </style>
+</head>
+<body>
+    <!-- even number balo pr highlght class apply krna hai  -->
+    <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>peach</li>
+        <li>mango</li>
+        <li>anar</li>
+        <li>orange</li>
+        <li>pineapple</li>
+    </ul>
+</body>
+<script>
+    let li=document.querySelectorAll("ul li:nth-child(2n)")
+    console.log(li);
+    li.forEach(function(el)
+{
+    el.classList.add("light")
+})
+    
+</script>
+</html>
