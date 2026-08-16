@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Select courses</h1>
+    <select>
+        <option selected disabled>select courses</option>
+        <option value="adca">ADCA</option>
+        <option value="mdca">MDCA</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="Kotlin">Kotlin</option>
+    </select>
+</body>
+<script>
+    let sel=document.querySelector('select')
+    let h1=document.querySelector("h1")
+    sel.addEventListener("change",function(e){
+        console.log(e.target.value)//e event or uske andar target ,target ke andar value hai jisme course ki value hai
+        h1.textContent=`${e.target.value} course selected`
+        
+        
+    })
+</script>
+</html>

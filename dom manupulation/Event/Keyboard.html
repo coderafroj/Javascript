@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        
+        div{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: darkslategrey;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>a</h1>
+    </div>
+</body>
+<script>
+    let h1=document.querySelector("h1")
+    window.addEventListener("keydown",function(e){
+        console.log(e);
+        if(e.key==" "){
+            h1.textContent="space";
+        }
+        else{
+        
+        h1.textContent=e.key;
+        }
+        
+
+    }
+
+    )
+</script>
+</html>

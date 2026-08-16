@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event </title>
+</head>
+<body>
+    <h1>hey!! coderafroj</h1>
+    <h2>my self coderafroj</h2>
+    <p>about of coderafroj</p>
+</body>
+<script>
+    // elemt.addEventListener("event name",function)
+    //add event listener 
+    //single click pr event 
+    let h1=document.querySelector("h1")
+    h1.addEventListener("click",function(){
+        h1.style.fontSize="20px"
+    })
+    //double click pr
+    let p=document.querySelector("p")
+    p.addEventListener("dblclick",()=>{
+        p.style.color="orange"
+    })
+    //remove event listener
+  let h2=document.querySelector("h2")
+  function click(){
+    h2.style.color="red"
+  }
+  h2.addEventListener("click",click)
+  //remove
+  h2.removeEventListener("click",click)
+  
+  
+
+
+
+</script>
+
+</html>
