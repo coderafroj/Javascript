@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .coder{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="coder">
+
+    </div>
+</body>
+<script>
+    let coder=document.querySelector(".coder")
+    //cursor jane pr color
+    coder.addEventListener("mouseover",()=>{
+        coder.style.backgroundColor="red"
+    })
+//cursor hatane pr color
+coder.addEventListener("mouseout",()=>{
+    coder.style.backgroundColor="orange"
+})
+    
+</script>
+</html>

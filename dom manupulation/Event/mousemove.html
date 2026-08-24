@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: lightblue;
+            border: 1px solid lightsteelblue;
+            position: absolute;
+            transition: cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+
+    </div>
+</body>
+<script>
+    let a=document.querySelector(".a")
+    window.addEventListener("mousemove",(e)=>{
+        console.log(e);
+        a.style.top=e.clientY+"px"
+        a.style.left=e.clientX+"px"
+        
+    })
+</script>
+</html>
