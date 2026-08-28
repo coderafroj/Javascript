@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>char counter</title>
+</head>
+<body>
+    <input type="text" placeholder="enter something else..">
+    <br>
+    <h2>char left:- <span>0</span></h2>
+</body>
+<script>
+    let inp=document.querySelector("input")
+    let sp=document.querySelector("span")
+    inp.addEventListener("input",(e)=>{
+        let left=20-inp.value.length
+        sp.textContent=left
+        if(left<0){
+            sp.style.color="red"
+        }
+        else{
+            sp.style.color="black"
+        }
+        
+        
+    })
+</script>
+</html>

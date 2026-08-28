@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event bubbling</title>
+    <style>
+        .li{
+            text-decoration: line-through;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>python</li>
+        <li>java</li>
+        <li>kotlin</li>
+        <li>javascript</li>
+        <li>ruby</li>
+
+    </ul>
+</body>
+<script>
+    let ul=document.querySelector("ul")
+    ul.addEventListener("click",(e)=>{
+        // e.target.style.textDecoration="line-through" 
+        // //jis li pr click karenge usi pr ye style lg jayegi  event bubbling(li pr event nhi hai to bo parent pr cehgk kr taj hai jakar agar us pr nhi to uske bhi parent pr yi event bubbling hia) ki bjah se
+        // e.target.classList.add("li")
+        e.target.classList.toggle("li")
+
+        
+    })
+</script>
+
+</html>
