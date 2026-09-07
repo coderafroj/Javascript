@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+<style>
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+</style>
+<body>
+    <div>
+        <h2>0</h2>
+    </div>
+    
+</body>
+<script>
+    let h2=document.querySelector("h2")
+
+    let count=0;
+    let c=setInterval(()=>{
+        if(count<10){
+            count++;
+            console.log(count);
+            h2.textContent=count
+
+        }
+        else{
+            clearInterval(c)
+        }
+        
+    },1000)
+    
+
+</script>
+</html>

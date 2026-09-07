@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+    <style>
+        .main{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        form input{
+            font-size: 21px;
+            padding: 5px;
+            border: none;
+            background-color: rgba(231, 225, 225, 0.3);
+            border-radius: 5px;
+        }
+        form button{
+            text-align: center;
+            font-size: 26px;
+            border-radius: 7px;
+            border: none;
+            padding: 5px 10px 5px 10px;
+        }
+        div{
+            width: 100%;
+            text-align: center;
+            margin-top: 8px;
+        }
+        .name{
+            font-size: 10px;
+            display: flex;
+            margin-left: 5px;
+            color: red;
+            display: none;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="main">
+        <form action="">
+        <input type="text" id="name" placeholder="enter name">
+        <br>
+        <small class="name">at least 3 character</small>
+        <br>
+        
+        <input type="password" id="password" placeholder="password"><br>
+      
+        <br>
+        <input type="email" placeholder="enter email" id="email"><br>
+          <small class="email"></small>
+        <div><button type="submit">submit</button></div>
+    </form>
+    </div>
+    
+    
+</body>
+<script>
+    let n=document.querySelector("#name")
+    let form=document.querySelector("form")
+     let p=document.querySelector("#password")
+     let em=document.querySelector("#email")
+    form.addEventListener("submit",(e)=>{
+         document.querySelector(".email").textContent=""
+         document.querySelector(".name").style.display="none"
+        e.preventDefault()
+        if(n.value.length<=2){
+            document.querySelector(".name").style.display="initial"
+        }
+        else{
+              document.querySelector(".name").style.display="none"
+
+        }
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let emailAns=emailRegex.test(em.value)
+        console.log(emailAns);
+        
+       
+        if(!emailAns){
+            document.querySelector(".email").textContent="invalid email"
+
+        }
+
+
+    })
+</script>
+</html>
