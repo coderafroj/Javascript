@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            height: 100vh;
+            width: 100%;
+            background:linear-gradient(navy,dodgerblue,skyblue) ;
+            
+        }
+        .t{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            
+        }
+        input{
+            margin-top: 15px;
+            padding: 5px 10px 5px 10px;
+            border-top-left-radius: 7px;
+            border-bottom-left-radius: 7px;
+            outline: none;
+            border: none;
+            width: 40%;
+        }
+        button{
+            margin-top: 15px;
+            padding: 10px 10px 10px 10px;
+            border: none;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+            width: 5%;
+        }
+        .todo{
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+        
+            background:orange ;
+            /* backdrop-filter: calc(10deg); */
+            max-width: 300px;
+            margin: auto;
+            margin-bottom: 5px;
+            
+            border-radius: 10px;
+            
+            
+            
+        }
+        .para{
+            font-size: 1.4rem;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="t">
+            <input type="text" name="" id="" placeholder="write todo..">
+            <button onclick=add()>Add </button>
+        </div>
+        
+    </div>
+</body>
+    <script>
+        let input=document.querySelector("input")
+        let main=document.querySelector(".main")
+        
+        
+        let btn=document.querySelector("button")
+        
+        
+         
+            input.addEventListener("input",(e)=>{
+            console.log(e.target.value);
+            todo=e.target.value
+            
+
+            
+        })
+        
+        console.log(todos)
+
+        window.addEventListener("keyup",(e)=>{
+            console.log(e.key)
+            if(e.key=="Enter"){
+                btn.click()
+            }
+        })
+        let todos=""
+        function add(){
+             todos=localStorage.setItem("n",input.value)
+            let todo=document.createElement("div")
+            todo.classList.add("todo")
+            let p=document.createElement("p")
+            todo.appendChild(p)
+            p.classList.add("para")
+            
+            p.textContent=localStorage.getItem("n",todos)
+            main.appendChild(todo)
+
+
+            
+            
+        }
+        
+
+        
+        
+    </script>
+</html>

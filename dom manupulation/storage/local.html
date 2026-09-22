@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localtorage</title>
+</head>
+<body>
+    <h2>hey let learn localtorage</h2>
+</body>
+<script>
+    //localStorage-- store the data in browser storage called localstorage, localStorage store around 4mb data
+    //sessionStorage-- same the localStorage but this store around 4kb and close the tab then clear the storage
+    //cookies--
+    //setitem(key,value)--setitem set the item in localstorage,and set item always set the value in string
+    //getItem(key,value)-- getitem get the fetch the value in localstorage
+    // removeItem(key)-- remove the item in localStorage 
+    //clear --clear all localstorage
+    const todos={
+        todo:[1,"coderafroj",'bareilly']
+    };
+    let c=localStorage.getItem("name");
+    localStorage.setItem("todo",todos.todo);
+    let t=localStorage.getItem("todo",todos)
+    localStorage.removeItem("name");
+    localStorage.clear()
+    
+    
+    
+</script>
+</html>
