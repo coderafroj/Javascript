@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .row{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .card{
+            width: 150px;
+            position: relative;
+        }
+        .card img{
+            width: 100%;
+            display: block;
+            border-radius: 7px;
+        }
+        .h2{
+            position: absolute;
+            bottom: 30px;
+            left: 5px;
+            color: wheat;
+        }
+        .p{
+            position: absolute;
+            bottom: 5px;
+            left: 8px;
+            color: white;
+            font-size: 15px;
+            
+        }
+        input{
+            width: 200px;
+            padding: 5px 10px 5px 10px;
+            border: none;
+            background-color: gray;
+            border-radius: 10px;
+            text-transform: capitalize;
+            
+        }
+        input::placeholder{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <input type="text"placeholder="enter name" name="" id="">
+        <div class="row">
+            
+        </div>
+    </div>
+    
+</body>
+<script>
+    
+let users = [
+
+    {
+        name: "Aarav Sharma",
+        title: "Frontend Developer",
+        pic: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=250"
+    },
+    {
+        name: "Priya Singh",
+        title: "UI/UX Designer",
+        pic: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=250"
+    },
+    {
+        name: "Rahul Verma",
+        title: "Backend Developer",
+        pic: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250"
+    },
+    {
+        name: "Ananya Gupta",
+        title: "Product Designer",
+        pic: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=250"
+    },
+    {
+        name: "Kabir Khan",
+        title: "Full Stack Developer",
+        pic: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=250"
+    },
+    {
+        name: "Sneha Kapoor",
+        title: "Marketing Manager",
+        pic: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=250"
+    },
+    {
+        name: "Aditya Raj",
+        title: "Software Engineer",
+        pic: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=250"
+    },
+    {
+        name: "Meera Joshi",
+        title: "Content Creator",
+        pic: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=250"
+    },
+    {
+        name: "Vikram Yadav",
+        title: "DevOps Engineer",
+        pic: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=250"
+    },
+    {
+        name: "Riya Malhotra",
+        title: "Web Developer",
+        pic: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=250"
+    }
+];
+let row=document.querySelector(".row")
+function ShowCard(arr){
+    let card=document.createElement("div")
+    card.classList.add('card')
+    let img=document.createElement("img")
+    img.src=arr.pic
+    img.loading='lazy'
+    let h2=document.createElement('h2')
+    h2.classList.add("h2")
+    h2.textContent=arr.name
+    let p=document.createElement("p")
+    p.classList.add("p")
+    p.textContent=arr.title
+    row.appendChild(card)
+    card.appendChild(img)
+    card.appendChild(h2)
+    card.appendChild(p)
+
+}
+// users.forEach(function(user){
+//     ShowCard(user)
+// })
+let inp=document.querySelector("input")
+inp.addEventListener("input",()=>{
+    let v=inp.value
+    let result=users.filter((user)=>{
+        return user.name.includes(v);
+    })
+    row.innerHTML=""
+    result.forEach(function(user){
+        ShowCard(user)
+    })
+
+})
+
+</script>
+</html>
