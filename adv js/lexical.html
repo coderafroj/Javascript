@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lexicle dynamic</title>
+</head>
+<body>
+
+</body>
+<script>
+    // lexicle scope--functon kaha likha hai baha dehta hai ya uske upper ien dekhege function ko call kaha kiya hia us mein dpnd nhi krega
+    //dynamic scope -- ismien ulta hota hai  function ko jha call kiya hai usi scop ien dekhta hai neeceh likhe hue code ine asnwer 6 a rha hai kiuki java lixicle scop euse krti ha afgar dynamix hoti to 8 ata
+    function abcd(){
+        let a=6;
+        console.log(a);
+        
+    }
+    function ab(){
+        let a=8
+        abcd()
+        
+    }
+    ab()
+
+</script>
+</html>

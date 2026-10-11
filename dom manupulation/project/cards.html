@@ -147,20 +147,25 @@ function ShowCard(arr){
     card.appendChild(img)
     card.appendChild(h2)
     card.appendChild(p)
-
+    
 }
-// users.forEach(function(user){
-//     ShowCard(user)
-// })
+
+users.forEach(function(user){
+    ShowCard(user)
+})
 let inp=document.querySelector("input")
 inp.addEventListener("input",()=>{
     let v=inp.value
     let result=users.filter((user)=>{
-        return user.name.includes(v);
+        return user.name.startsWith(v);
     })
     row.innerHTML=""
     result.forEach(function(user){
         ShowCard(user)
+        console.log(user);
+        console.log("result",result);
+        
+        
     })
 
 })
