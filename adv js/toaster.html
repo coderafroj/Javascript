@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toasert notification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .s{
+            position: fixed;
+
+        }
+    </style>
+</head>
+<body>
+        
+</body>
+<script>
+    function CreateToaster(config){
+        return function (notification){
+            let div=document.createElement("div")
+            div.className=`fixed ${config.theme='dark'?"bg-gray-800 text-white":"bg-gray-100 text-black"} px-4 py- rounded shadow-lg ${config.positionX==="right"?"right-10":"left-10"} ${config.positionY==="top"?"top-10":"bottom-10"} `
+            div.textContent=notification
+            document.body.appendChild(div)
+            setTimeout(()=>{
+                document.body.remove(div)
+            },config.duration*1000)
+        }
+    }
+   let toaseter= CreateToaster({
+        positionX:"top",
+        positionY:"right",
+        theme:"light",
+        duration:3
+
+    })
+    toaseter("hello hey my self coder")
+</script>
+</html>
