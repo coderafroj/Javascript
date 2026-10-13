@@ -6,22 +6,23 @@
     <title>toasert notification</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .s{
-            position: fixed;
-
-        }
+        .
     </style>
 </head>
 <body>
+    <div class="parent"></div>
         
 </body>
 <script>
     function CreateToaster(config){
         return function (notification){
+
+            let parent=document.querySelector(".parent")
+            
             let div=document.createElement("div")
-            div.className=`fixed ${config.theme='dark'?"bg-gray-800 text-white":"bg-gray-100 text-black"} px-4 py- rounded shadow-lg ${config.positionX==="right"?"right-10":"left-10"} ${config.positionY==="top"?"top-10":"bottom-10"} `
+            div.className=`flex flex-col gap-2 ${config.theme='dark'?"bg-gray-800 text-white":"bg-gray-100 text-black"} px-4 py- rounded shadow-lg ${config.positionX==="right"?"right-10":"left-10"} ${config.positionY==="top"?"top-10":"bottom-10"} `
             div.textContent=notification
-            document.body.appendChild(div)
+            parent.appendChild(div)
             setTimeout(()=>{
                 document.body.remove(div)
             },config.duration*1000)
@@ -31,9 +32,10 @@
         positionX:"top",
         positionY:"right",
         theme:"light",
-        duration:3
+        duration:20
 
     })
     toaseter("hello hey my self coder")
+    toaseter("download now")
 </script>
 </html>
