@@ -23,38 +23,38 @@
 // })
 // console.log(array)
 
-// const books=[{
-//   title:"rich dad poor dad",
-//   genre:'business',
-//   publish:"2015"
-// },
-// {
-//   title:"pshycology",
-//   genre:'mind',
-//   publish:"2014"
-// },
-// {
-//   title:"physics",
-//   genre:'knowledge',
-//   publish:"10ed"
-// },
-// {
-//   title:"Atomic habit",
-//   genre:'business',
-//   publish:"2015"
-// },
-// {
-//   title:"metasploit",
-//   genre:'hacking',
-//   publish:"2015"
-// },
-// {
-//   title:"kali linux",
-//   genre:'hacking',
-//   publish:"2011"
-// }]
-// const b=books.filter((bk)=>bk.genre==='hacking')
-// console.log(b)
+const books=[{
+  title:"rich dad poor dad",
+  genre:'business',
+  publish:"2015"
+},
+{
+  title:"pshycology",
+  genre:'mind',
+  publish:"2014"
+},
+{
+  title:"physics",
+  genre:'knowledge',
+  publish:"10ed"
+},
+{
+  title:"Atomic habit",
+  genre:'business',
+  publish:"2015"
+},
+{
+  title:"metasploit",
+  genre:'hacking',
+  publish:"2015"
+},
+{
+  title:"kali linux",
+  genre:'hacking',
+  publish:"2011"
+}]
+const b=books.filter((bk)=>bk.genre!=='hacking')
+console.log(b)
 // const b=books.filter((bk)=>bk.publish>=2000)
 // const b=books.filter((bk)=>{
 //   return bk.publish>=2000 && bk.genre==='hacking'
