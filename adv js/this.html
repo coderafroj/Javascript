@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this keyword</title>
+</head>
+<body>
+    <h1>hey my self coderafroj</h1>
+</body>
+<script>
+    //global scope mein this ki value window hoti hai
+    console.log(this);
+    //function -- mien this ki value window hoti hai 
+    function coder(){
+        console.log(this);
+        
+    }
+    coder()
+    //mathod mein this ki value object hota hai agar arrow funciton use krenge tab bhi window hoga
+    let obj={
+        name:"coderafroj",
+        location:"india",
+        show:function(){
+            console.log(this);
+            
+        }
+    }
+    obj.show()
+    //event handler -- mien this ki value element hota hai jis pr event listener laga hai
+    document.querySelector("h1").addEventListener("click",function(){
+        console.log(this.textContent="running coderafroj",this.style.color="skyblue");
+        
+    })
+    //class
+    class Coder{
+        constructor(){
+            this.a=6
+            console.log("this",this.a);
+            
+        }
+    }
+    let n=new Coder()
+    console.log(n);
+    
+    
+    
+</script>
+</html>
