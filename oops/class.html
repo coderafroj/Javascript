@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Coderafroj{
+        constructor(name,add,phone){
+            this.name=name
+            this.add=add
+            this.phone=phone
+            console.log("constructer called");
+            this.role="coderafroj"
+        }
+        show(text){
+            let p=document.createElement("p")
+            let div=document.createElement("div")
+            div.classList.add("box")
+            let id=document.createElement("span")
+            let h1=document.createElement("h1")
+            let h2=document.createElement("h2")
+            let h3=document.createElement("h3")
+            id.textContent=`id  : ${Date.now()}`
+            h1.textContent=`Name    :   ${this.name}`
+            h2.textContent=`Address :   ${this.add}`
+            h3.textContent=`phone   :   ${this.phone}`
+        
+            p.textContent=`${this.name}  ${text}`
+            
+           div.appendChild(p)
+            div.appendChild(id)
+            div.appendChild(h1)
+             div.appendChild(h2)
+              div.appendChild(h3)
+               document.body.append(div)
+
+            
+
+
+            
+            
+
+        }
+        
+     }
+     class Admin extends Coderafroj{
+        constructor(name,add,phone){
+            super(name,add,phone)
+            this.role="admin"
+
+        }
+     }
+    let c1=new Coderafroj("afroj",'bareilly','7017733805')
+    let c2=new Coderafroj("marif noori","thiriya",'234872384')
+    let admin=new Admin("coderafroj","india","25379543")
+    
+</script>
+</html>

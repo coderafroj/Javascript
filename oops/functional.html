@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oops</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function coder(name,add,phone){
+        this.name=name
+        this.add=add
+        this.phone=phone
+        this.write=function(text){
+            let h1=document.createElement("h1")
+            h1.textContent=`hey ${this.name}`
+            
+            document.body.append(h1)
+
+        }
+        show(){
+            console.log("hello");
+            
+        }
+        
+        
+    }
+    let c=new coder('arman','bareilly','7017733805')
+    let c1=new coder('richa','bhindoliya','835846583')
+
+</script>
+</html>
