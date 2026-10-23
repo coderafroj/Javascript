@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback</title>
+</head>
+<body>
+
+</body>
+<script>
+    function showData(name,cp){
+        console.log("fetching user.",name,"...");
+        
+        setTimeout(()=>{
+            console.log("hey how are you!!",name);
+            
+            cp({name,age:12,city:"bareilly"})
+        },3000)
+    }
+    showData('coderafroj',function(data){
+        console.log(data)
+    })
+</script>
+</html>
