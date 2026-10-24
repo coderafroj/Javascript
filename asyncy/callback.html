@@ -15,12 +15,19 @@
         setTimeout(()=>{
             console.log("hey how are you!!",name);
             
-            cp({name,age:12,city:"bareilly"})
+            cp({name,age:12,city:"bareilly",id:1729})
         },3000)
     }
-    
+function posts(id,cb){
+    setTimeout(()=>{
+        cb({id:id,posts:["hey",'hi']})
+    })
+}
     showData('coderafroj',function(data){
-        console.log(data)
+        posts(data.id,function(post){
+            console.log(post)
+
+        })
     })
 </script>
 </html>
