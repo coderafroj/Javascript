@@ -19,11 +19,15 @@
         },3000)
     }
 function posts(id,cb){
+    console.log('loading post..');
+    
     setTimeout(()=>{
         cb({id:id,posts:["hey",'hi']})
-    })
+    },5000)
 }
     showData('coderafroj',function(data){
+        console.log(data);
+        
         posts(data.id,function(post){
             console.log(post)
 

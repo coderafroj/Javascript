@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="enter pincode">
+        <button>click</button>
+    </div>
+    <div class="r"></div>
+    
+</body>
+<script>
+    // fetch("https://randomuser.me/ai")
+    // .then((res)=>{
+    //     return res.json()
+    // }).then((res)=>{
+    //     console.log(res.results[0]);
+    // }
+        
+    // ).catch((err)=>{
+    //     console.log("fuck "+err)
+    // })
+    let d;
+    let input=document.querySelector("input")
+    let btn=document.querySelector("button")
+    let result=document.querySelector(".r")
+
+    
+    input.addEventListener("input",()=>{
+        d=input.value
+        
+        
+        
+        
+        
+    })
+    function f(){
+        if(!d){
+            result.innerHTML="enter pincode bete."
+        }else{
+            result.innerHTML="Loading....."
+        }
+        fetch(`https://api.postalpincode.in/pincode/${d}`)
+    .then((res)=>{
+        return res.json()
+    }).then((res)=>{
+    let data=res[0]
+    if(data.Status==="Error"){
+        result.innerHTML="invalid pincode.."
+    }
+    let post=data.PostOffice[0]
+    console.log(post);
+    
+    result.innerHTML=`
+    <h1>Name        : ${post.Name}</h1>
+    <h1>Circle      : ${post.Circle}</h1>
+    <h1>Country     : ${post.Country}</h1>
+    <h1>State       : ${post.State}</h1>
+    <h1>Region      : ${post.Region}</h1>
+    
+    `
+
+        
+    }
+    
+
+).catch((err)=>{
+        console.log("fuck this "+err);
+        
+    })
+    }
+    btn.addEventListener("click",()=>{
+        f()
+    })
+    
+
+    
+</script>
+</html>
